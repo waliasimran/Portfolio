@@ -3,7 +3,6 @@ import styled from "styled-components";
 import { Bio } from "../../data/constants";
 import Typewriter from "typewriter-effect";
 import HeroBgAnimation from "../HeroBgAnimation";
-import { Tilt } from "react-tilt";
 import { motion } from "framer-motion";
 import {
   headContainerAnimation,
@@ -29,6 +28,7 @@ const HeroContainer = styled.div`
 
   clip-path: polygon(0 0, 100% 0, 100% 100%, 70% 95%, 0 100%);
 `;
+
 const HeroInnerContainer = styled.div`
   position: relative;
   display: flex;
@@ -41,9 +41,11 @@ const HeroInnerContainer = styled.div`
     flex-direction: column;
   }
 `;
+
 const HeroLeftContainer = styled.div`
   width: 100%;
   order: 1;
+
   @media (max-width: 960px) {
     order: 2;
     margin-bottom: 30px;
@@ -53,17 +55,19 @@ const HeroLeftContainer = styled.div`
     align-items: center;
   }
 `;
+
 const HeroRightContainer = styled.div`
   width: 100%;
   order: 2;
   display: flex;
   justify-content: end;
+
   @media (max-width: 960px) {
     order: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-contents: center;
+    justify-content: center;
     margin-bottom: 80px;
   }
 
@@ -82,7 +86,7 @@ const Title = styled.div`
     text-align: center;
   }
 
-  @media (max-width: 960px) {
+  @media (max-width: 640px) {
     font-size: 40px;
     line-height: 48px;
     margin-bottom: 8px;
@@ -101,7 +105,7 @@ const TextLoop = styled.div`
     text-align: center;
   }
 
-  @media (max-width: 960px) {
+  @media (max-width: 640px) {
     font-size: 22px;
     line-height: 48px;
     margin-bottom: 16px;
@@ -123,7 +127,7 @@ const SubTitle = styled.div`
     text-align: center;
   }
 
-  @media (max-width: 960px) {
+  @media (max-width: 640px) {
     font-size: 16px;
     line-height: 32px;
   }
@@ -134,46 +138,27 @@ const ResumeButton = styled.a`
   -moz-appearance: button;
   appearance: button;
   text-decoration: none;
-
   width: 95%;
   max-width: 300px;
   text-align: center;
   padding: 16px 0;
-
-  background: hsla(271, 100%, 50%, 1);
-  background: linear-gradient(
-    225deg,
-    hsla(271, 100%, 50%, 1) 0%,
-    hsla(294, 100%, 50%, 1) 100%
-  );
-  background: -moz-linear-gradient(
-    225deg,
-    hsla(271, 100%, 50%, 1) 0%,
-    hsla(294, 100%, 50%, 1) 100%
-  );
-  background: -webkit-linear-gradient(
-    225deg,
-    hsla(271, 100%, 50%, 1) 0%,
-    hsla(294, 100%, 50%, 1) 100%
-  );
+  background: linear-gradient(225deg, hsla(271, 100%, 50%, 1) 0%, hsla(294, 100%, 50%, 1) 100%);
   box-shadow: 20px 20px 60px #1f2634, -20px -20px 60px #1f2634;
   border-radius: 50px;
   font-weight: 600;
   font-size: 20px;
+  color: white;
+  transition: all 0.4s ease-in-out;
 
-     &:hover {
-        transform: scale(1.05);
-    transition: all 0.4s ease-in-out;
-    box-shadow:  20px 20px 60px #1F2634,
+  &:hover {
+    transform: scale(1.05);
     filter: brightness(1);
-    }    
-    
-    
-    @media (max-width: 640px) {
-        padding: 12px 0;
-        font-size: 18px;
-    } 
-    color: white;
+  }
+
+  @media (max-width: 640px) {
+    padding: 12px 0;
+    font-size: 18px;
+  }
 `;
 
 const Img = styled.img`
@@ -205,12 +190,11 @@ const HeroBg = styled.div`
   padding: 0 30px;
   top: 50%;
   left: 50%;
-  -webkit-transform: translateX(-50%) translateY(-50%);
   transform: translateX(-50%) translateY(-50%);
 
   @media (max-width: 960px) {
     justify-content: center;
-    padding: 0 0px;
+    padding: 0;
   }
 `;
 
@@ -254,7 +238,7 @@ const Hero = () => {
             </HeroLeftContainer>
             <HeroRightContainer>
               <motion.div {...headContentAnimation}>
-                
+                {/* Add any necessary content for the right container here */}
               </motion.div>
             </HeroRightContainer>
           </HeroInnerContainer>
