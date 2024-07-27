@@ -50,7 +50,7 @@ const Date = styled.div`
     font-size: 10px;
   }
 `;
-const Grade = styled.div`
+// const Grade = styled.div`
   font-size: 14px;
   font-weight: 500;
   color: ${({ theme }) => theme.text_secondary + 99};
